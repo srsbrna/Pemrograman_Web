@@ -71,9 +71,15 @@
                     </a>
                 </div>
 
+                <!-- Pencarian tabel -->
+                <div class="mb-3">
+                    <label for="search-input" class="form-label">Cari data</label>
+                    <input type="text" id="search-input" class="form-control" placeholder="Cari judul buku..." autocomplete="off">
+                </div>
+
                 <!-- Table -->
                 <div class="table-responsive">
-                    <table class="table table-striped table-bordered table-hover align-middle">
+                    <table class="table table-striped table-bordered table-hover align-middle" data-filter="buku">
 
                         <thead class="table-primary">
                             <tr>
@@ -101,7 +107,7 @@
                                         Detail
                                     </button>
 
-                                    <button type="button" class="btn btn-sm btn-danger">
+                                    <button type="button" class="btn btn-sm btn-danger btn-hapus">
                                         Hapus
                                     </button>
                                 </td>
@@ -121,7 +127,7 @@
                                         Detail
                                     </button>
 
-                                    <button type="button" class="btn btn-sm btn-danger">
+                                    <button type="button" class="btn btn-sm btn-danger btn-hapus">
                                         Hapus
                                     </button>
                                 </td>
@@ -141,7 +147,7 @@
                                         Detail
                                     </button>
 
-                                    <button type="button" class="btn btn-sm btn-danger">
+                                    <button type="button" class="btn btn-sm btn-danger btn-hapus">
                                         Hapus
                                     </button>
                                 </td>
@@ -161,7 +167,7 @@
                                         Detail
                                     </button>
 
-                                    <button type="button" class="btn btn-sm btn-danger">
+                                    <button type="button" class="btn btn-sm btn-danger btn-hapus">
                                         Hapus
                                     </button>
                                 </td>
@@ -181,7 +187,7 @@
                                         Detail
                                     </button>
 
-                                    <button type="button" class="btn btn-sm btn-danger">
+                                    <button type="button" class="btn btn-sm btn-danger btn-hapus">
                                         Hapus
                                     </button>
                                 </td>
@@ -201,7 +207,7 @@
                                         Detail
                                     </button>
 
-                                    <button type="button" class="btn btn-sm btn-danger">
+                                    <button type="button" class="btn btn-sm btn-danger btn-hapus">
                                         Hapus
                                     </button>
                                 </td>
@@ -221,7 +227,7 @@
                                         Detail
                                     </button>
 
-                                    <button type="button" class="btn btn-sm btn-danger">
+                                    <button type="button" class="btn btn-sm btn-danger btn-hapus">
                                         Hapus
                                     </button>
                                 </td>
@@ -245,6 +251,7 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/app.js"></script>
 
 </body>
 </html>

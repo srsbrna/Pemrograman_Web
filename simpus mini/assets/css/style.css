@@ -235,3 +235,62 @@ nav label {
     width: 100%;
     overflow-x: auto;
 }
+
+/* ===== Form Tambah Buku & Tambah Anggota ===== */
+
+/* Membuat kotak form berada di tengah */
+.form-card {
+    width: 100%;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Membuat isi form tidak terlalu melebar */
+.form-tambah {
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Input dan textarea mengikuti lebar form */
+.form-tambah .form-control,
+.form-tambah select {
+    width: 100%;
+}
+
+/* Tombol berada di tengah */
+.form-tambah .form-buttons {
+    text-align: center;
+}
+
+/* ===== Responsive Form ===== */
+
+@media (max-width: 767px) {
+
+    .form-card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .form-tambah {
+        width: 100%;
+        max-width: 100%;
+    }
+
+}
+
+/* ===== Pendukung JavaScript Jobsheet 5 ===== */
+.error {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    color: #dc3545;
+}
+
+@media (max-width: 767.98px) {
+    #navbarNav.show {
+        display: block;
+    }
+}
