@@ -77,6 +77,9 @@
                     <input type="text" id="search-input" class="form-control" placeholder="Cari judul buku..." autocomplete="off">
                 </div>
 
+                <!-- Loading indicator -->
+                <p id="loading-indicator" style="display:none;">Memuat data...</p>
+
                 <!-- Table -->
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered table-hover align-middle" data-filter="buku">
@@ -92,147 +95,7 @@
                         </thead>
 
                         <tbody>
-
-                            <tr>
-                                <td>Laskar Pelangi</td>
-                                <td>Andrea Hirata</td>
-                                <td>2005</td>
-                                <td><span class="badge bg-success">4</span></td>
-                                <td>
-                                    <button type="button" class="btn btn-sm btn-warning">
-                                        Edit
-                                    </button>
-
-                                    <button type="button" class="btn btn-sm btn-info">
-                                        Detail
-                                    </button>
-
-                                    <button type="button" class="btn btn-sm btn-danger btn-hapus">
-                                        Hapus
-                                    </button>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>Bumi Manusia</td>
-                                <td>Pramoedya Ananta Toer</td>
-                                <td>1980</td>
-                                <td><span class="badge bg-success">2</span></td>
-                                <td>
-                                    <button type="button" class="btn btn-sm btn-warning">
-                                        Edit
-                                    </button>
-
-                                    <button type="button" class="btn btn-sm btn-info">
-                                        Detail
-                                    </button>
-
-                                    <button type="button" class="btn btn-sm btn-danger btn-hapus">
-                                        Hapus
-                                    </button>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>Negeri 5 Menara</td>
-                                <td>Ahmad Fuadi</td>
-                                <td>2009</td>
-                                <td><span class="badge bg-danger">0</span></td>
-                                <td>
-                                    <button type="button" class="btn btn-sm btn-warning">
-                                        Edit
-                                    </button>
-
-                                    <button type="button" class="btn btn-sm btn-info">
-                                        Detail
-                                    </button>
-
-                                    <button type="button" class="btn btn-sm btn-danger btn-hapus">
-                                        Hapus
-                                    </button>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>Filosofi Teras</td>
-                                <td>Henry Manampiring</td>
-                                <td>2018</td>
-                                <td><span class="badge bg-success">5</span></td>
-                                <td>
-                                    <button type="button" class="btn btn-sm btn-warning">
-                                        Edit
-                                    </button>
-
-                                    <button type="button" class="btn btn-sm btn-info">
-                                        Detail
-                                    </button>
-
-                                    <button type="button" class="btn btn-sm btn-danger btn-hapus">
-                                        Hapus
-                                    </button>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>Ronggeng Dukuh Paruk</td>
-                                <td>Ahmad Tohari</td>
-                                <td>1982</td>
-                                <td><span class="badge bg-success">1</span></td>
-                                <td>
-                                    <button type="button" class="btn btn-sm btn-warning">
-                                        Edit
-                                    </button>
-
-                                    <button type="button" class="btn btn-sm btn-info">
-                                        Detail
-                                    </button>
-
-                                    <button type="button" class="btn btn-sm btn-danger btn-hapus">
-                                        Hapus
-                                    </button>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>5cm</td>
-                                <td>Donny Dhirgantoro</td>
-                                <td>2005</td>
-                                <td><span class="badge bg-success">3</span></td>
-                                <td>
-                                    <button type="button" class="btn btn-sm btn-warning">
-                                        Edit
-                                    </button>
-
-                                    <button type="button" class="btn btn-sm btn-info">
-                                        Detail
-                                    </button>
-
-                                    <button type="button" class="btn btn-sm btn-danger btn-hapus">
-                                        Hapus
-                                    </button>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>Harry Potter</td>
-                                <td>J.K. Rowling</td>
-                                <td>1997</td>
-                                <td><span class="badge bg-success">4</span></td>
-                                <td>
-                                    <button type="button" class="btn btn-sm btn-warning">
-                                        Edit
-                                    </button>
-
-                                    <button type="button" class="btn btn-sm btn-info">
-                                        Detail
-                                    </button>
-
-                                    <button type="button" class="btn btn-sm btn-danger btn-hapus">
-                                        Hapus
-                                    </button>
-                                </td>
-                            </tr>
-
+                            <!-- Baris diisi dinamis oleh assets/js/buku.js via fetch('../data/buku.json') -->
                         </tbody>
                     </table>
                 </div>
@@ -252,6 +115,7 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/buku.js"></script>
 
 </body>
 </html>

@@ -14,20 +14,21 @@ function initNavToggle() {
     });
 }
 
-// ===== Konfirmasi hapus (front-end only) =====
+// ===== Konfirmasi hapus (event delegation untuk data dinamis) =====
 function initHapusConfirm() {
-    document.querySelectorAll(".btn-hapus").forEach(function (btn) {
-        btn.addEventListener("click", function () {
-            const row = btn.closest("tr");
-            if (!row) return;
+    // Baris tabel sekarang dibuat dinamis melalui fetch(),
+    // sehingga tombol Hapus belum tentu ada saat DOMContentLoaded.
+    document.addEventListener("click", function (e) {
+        const btn = e.target.closest(".btn-hapus");
+        if (!btn) return;
 
-            const nama = row.querySelector("td")?.textContent.trim() || "data ini";
-            const yakin = confirm('Yakin ingin menghapus "' + nama + '"?');
+        const row = btn.closest("tr");
+        const nama = row ? row.querySelector("td")?.textContent : "data ini";
+        const yakin = confirm('Yakin ingin menghapus "' + nama + '"?');
 
-            if (yakin) {
-                row.remove();
-            }
-        });
+        if (yakin && row) {
+            row.remove();
+        }
     });
 }
 

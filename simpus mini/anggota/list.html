@@ -90,6 +90,9 @@
                     <input type="text" id="search-input" class="form-control" placeholder="Cari nama anggota..." autocomplete="off">
                 </div>
 
+                <!-- Loading indicator -->
+                <p id="loading-indicator" style="display:none;">Memuat data...</p>
+
                 <!-- Table -->
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered table-hover align-middle" data-filter="anggota">
@@ -100,47 +103,12 @@
                                 <th>Nama</th>
                                 <th>Alamat</th>
                                 <th>No. HP</th>
-                                <th>Tanggal Bergabung</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
 
                         <tbody>
-
-                            <tr>
-                                <td>A001</td>
-                                <td>Siti Aminah</td>
-                                <td>Malang</td>
-                                <td>0812xxxx</td>
-                                <td>2026-09-01</td>
-                                <td>
-                                    <button type="button" class="btn btn-sm btn-warning">
-                                        Edit
-                                    </button>
-
-                                    <button type="button" class="btn btn-sm btn-danger btn-hapus">
-                                        Hapus
-                                    </button>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>A002</td>
-                                <td>Budi Santoso</td>
-                                <td>Batu</td>
-                                <td>0813xxxx</td>
-                                <td>2026-09-03</td>
-                                <td>
-                                    <button type="button" class="btn btn-sm btn-warning">
-                                        Edit
-                                    </button>
-
-                                    <button type="button" class="btn btn-sm btn-danger btn-hapus">
-                                        Hapus
-                                    </button>
-                                </td>
-                            </tr>
-
+                            <!-- Baris diisi dinamis oleh assets/js/anggota.js via fetch('../data/anggota.json') -->
                         </tbody>
 
                     </table>
@@ -161,6 +129,7 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/anggota.js"></script>
 
 </body>
 </html>
