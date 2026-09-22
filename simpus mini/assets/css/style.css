@@ -1,287 +1,299 @@
-/* ===== Reset & Base ===== */
+/* Base */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+html,
+body {
+    min-height: 100%;
+}
+
 body {
     font-family: "Segoe UI", Arial, sans-serif;
-    color: #2b2b2b;
-    background-color: #f5f6f8;
+    color: #354b3d;
+    background-color: #f8f1df;
     line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 a {
-    color: #2E6B3E;
+    color: #356b4a;
     text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
+    color: #254f36;
+    text-decoration: none;
 }
 
-/* ===== Header & Navbar (Flexbox) ===== */
-header {
-    background-color: #2E6B3E;
-    color: #fff;
-    padding: 1rem 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+/* Navbar */
+header.navbar.bg-primary {
+    flex-shrink: 0;
+    background-color: #315c43 !important;
 }
 
-header h1 {
-    font-size: 1.4rem;
+header .container {
+    min-height: 58px;
 }
 
-header nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.25rem;
-}
-
-header nav a {
-    color: #fff;
-    font-weight: 500;
-}
-
-/* ===== Main Layout ===== */
-main {
-    max-width: 1000px;
-    margin: 2rem auto;
-    padding: 0 1.5rem;
-}
-
-section {
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-}
-
-section h2 {
-    margin-bottom: 1rem;
-    color: #2E6B3E;
-}
-
-/* ===== Kartu Statistik (CSS Grid) ===== */
-.stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-}
-
-.card {
-    background-color: #eef4fa;
-    border-radius: 8px;
-    padding: 1.25rem;
-    text-align: center;
-}
-
-.card h3 {
-    font-size: 0.95rem;
-    color: #55677a;
-    margin-bottom: 0.5rem;
-}
-
-.card p {
-    font-size: 1.8rem;
+.navbar-brand {
+    color: #fff8e7 !important;
+    font-size: 1.1rem;
     font-weight: 700;
-    color: #2E6B3E;
+    letter-spacing: 0.2px;
 }
 
-/* ===== Tabel ===== */
-table {
-    width: 100%;
-    border-collapse: collapse;
+.navbar-brand:hover {
+    color: #f5e7c5 !important;
 }
 
-th, td {
-    text-align: left;
-    padding: 0.65rem 0.75rem;
-    border-bottom: 1px solid #e2e6ea;
+#navMenu {
+    margin-left: auto;
 }
 
-thead {
-    background-color: #2E6B3E;
-    color: #fff;
+#navMenu .navbar-nav {
+    align-items: center;
 }
 
-tbody tr:nth-child(even) {
-    background-color: #f7f9fb;
+#navMenu .nav-link {
+    color: #f8f1df !important;
+    font-size: 0.88rem;
+    font-weight: 500;
+    padding: 0.45rem 0.65rem;
+    border-radius: 7px;
+    transition: all 0.2s ease;
 }
 
-tbody tr:hover {
-    background-color: #eef4fa;
+#navMenu .nav-link:hover {
+    color: #315c43 !important;
+    background-color: #f5e7c5;
 }
 
-td button {
-    padding: 0.35rem 0.7rem;
-    margin-right: 0.35rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.85rem;
-}
-
-td button.btn-edit {
-    background-color: #f0ad4e;
-    color: #fff;
-}
-
-td button.btn-detail {
-    background-color: #5bc0de;
-    color: #fff;
-}
-
-td button.btn-hapus {
-    background-color: #d9534f;
-    color: #fff;
-}
-
-/* ===== Form ===== */
-form p {
-    margin-bottom: 1rem;
-}
-
-form label {
-    display: block;
-    margin-bottom: 0.35rem;
+#navMenu .nav-link.active {
+    color: #315c43 !important;
+    background-color: #f5e7c5;
     font-weight: 600;
-    color: #444;
 }
 
-form input,
-form select {
-    width: 100%;
-    max-width: 400px;
-    padding: 0.55rem 0.7rem;
-    border: 1px solid #cdd4da;
-    border-radius: 4px;
-    font-size: 1rem;
+.navbar-toggler {
+    border-color: #f5e7c5 !important;
 }
 
-form button[type="submit"] {
-    background-color: #2E6B3E;
-    color: #fff;
-    border: none;
-    padding: 0.6rem 1.5rem;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.15rem rgba(245, 231, 197, 0.35);
 }
 
-form button[type="submit"]:hover {
-    background-color: #164869;
+/* Main */
+main {
+    flex: 1;
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
 }
 
-/* ===== Footer ===== */
-footer {
-    text-align: center;
-    padding: 1.25rem;
-    color: #7a8794;
-    font-size: 0.9rem;
+/* Card */
+.card {
+    background-color: #fffaf0;
+    border: 1px solid #eadfca;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(49, 92, 67, 0.08) !important;
 }
 
-/* ===== Responsive Navbar ===== */
-
-nav input[type="checkbox"] {
-    display: none;
+.card-body {
+    padding: 1.5rem;
 }
 
-nav label {
-    display: none;
-    font-size: 1.8rem;
-    cursor: pointer;
+.card h2,
+main h2 {
+    font-weight: 700;
 }
 
-/* Tampilan mobile */
-@media (max-width: 767px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    header nav {
-        width: 100%;
-    }
-
-    nav label {
-        display: block;
-        text-align: right;
-    }
-
-    header nav ul {
-        display: none;
-        flex-direction: column;
-        gap: 0.5rem;
-        margin-top: 1rem;
-        width: 100%;
-    }
-
-    nav input[type="checkbox"]:checked ~ ul {
-        display: flex;
-    }
-
-    .stats {
-        grid-template-columns: 1fr;
-    }
+/* Beranda */
+main .card-title {
+    color: #315c43 !important;
 }
 
+main .card-title.text-primary {
+    color: #315c43 !important;
+}
+
+main .card-text {
+    color: #526458;
+}
+
+/* Ringkasan */
+main .rounded-3 {
+    background-color: #f5e7c5 !important;
+    border: 1px solid #ead8ae;
+}
+
+main .rounded-3 h3 {
+    color: #607365 !important;
+}
+
+main .rounded-3 p {
+    color: #315c43 !important;
+}
+
+/* Button */
+.btn-primary {
+    background-color: #315c43;
+    border-color: #315c43;
+    color: #fffaf0;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+    background-color: #254f36 !important;
+    border-color: #254f36 !important;
+    color: #fffaf0 !important;
+}
+
+.btn-secondary {
+    background-color: #718276;
+    border-color: #718276;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary:active {
+    background-color: #5e6f63 !important;
+    border-color: #5e6f63 !important;
+}
+
+/* Table */
 .table-responsive {
     width: 100%;
     overflow-x: auto;
+    border-radius: 10px;
 }
 
-/* ===== Form Tambah Buku & Tambah Anggota ===== */
+.table {
+    margin-bottom: 0;
+    color: #354b3d;
+}
 
-/* Membuat kotak form berada di tengah */
+.table-primary {
+    --bs-table-bg: #315c43;
+    --bs-table-color: #fffaf0;
+    --bs-table-border-color: #315c43;
+}
+
+.table > thead th {
+    color: #fffaf0 !important;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.table > tbody > tr {
+    background-color: #fffaf0;
+}
+
+.table > tbody > tr:nth-of-type(odd) {
+    background-color: #fffdf7;
+}
+
+.table > tbody > tr:hover {
+    background-color: #f5e7c5;
+}
+
+.table td {
+    color: #405548;
+}
+
+.table th,
+.table td {
+    vertical-align: middle;
+}
+
+/* Form */
 .form-card {
     width: 100%;
-    max-width: 650px;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Membuat isi form tidak terlalu melebar */
 .form-tambah {
     width: 100%;
-    max-width: 500px;
+    max-width: 550px;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Input dan textarea mengikuti lebar form */
+.form-tambah .form-label {
+    color: #315c43;
+    font-weight: 600;
+}
+
 .form-tambah .form-control,
-.form-tambah select {
+.form-tambah .form-select,
+.form-tambah textarea {
     width: 100%;
+    background-color: #fffdf7;
+    border: 1px solid #d8cdb8;
+    color: #354b3d;
+    border-radius: 8px;
 }
 
-/* Tombol berada di tengah */
-.form-tambah .form-buttons {
-    text-align: center;
+.form-tambah .form-control::placeholder,
+.form-tambah textarea::placeholder {
+    color: #9b9a8f;
 }
 
-/* ===== Responsive Form ===== */
-
-@media (max-width: 767px) {
-
-    .form-card {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .form-tambah {
-        width: 100%;
-        max-width: 100%;
-    }
-
+.form-tambah .form-control:focus,
+.form-tambah .form-select:focus,
+.form-tambah textarea:focus {
+    background-color: #fffaf0;
+    border-color: #6f9a7d;
+    box-shadow: 0 0 0 0.2rem rgba(49, 92, 67, 0.12);
 }
 
-/* ===== Pendukung JavaScript Jobsheet 5 ===== */
+.form-tambah .form-select {
+    cursor: pointer;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+/* Search */
+#search-input {
+    background-color: #fffdf7;
+    border: 1px solid #d8cdb8;
+    color: #354b3d;
+    border-radius: 8px;
+}
+
+#search-input::placeholder {
+    color: #9b9a8f;
+}
+
+#search-input:focus {
+    background-color: #fffaf0;
+    border-color: #6f9a7d;
+    box-shadow: 0 0 0 0.2rem rgba(49, 92, 67, 0.12);
+}
+
+label.form-label {
+    color: #315c43;
+    font-weight: 600;
+}
+
+/* Loading */
+#loading-indicator {
+    color: #5f7567;
+    font-style: italic;
+}
+
+/* Error */
 .error {
     display: block;
     margin-top: 0.25rem;
@@ -289,8 +301,78 @@ nav label {
     color: #dc3545;
 }
 
+/* Footer */
+footer {
+    flex-shrink: 0;
+    background-color: #315c43;
+    color: #f8f1df;
+    border-top: 3px solid #f0dfb7;
+}
+
+footer p {
+    color: #f8f1df;
+}
+
+/* Responsive Navbar */
 @media (max-width: 767.98px) {
-    #navbarNav.show {
+    #navMenu {
+        display: none;
+        width: 100%;
+        flex-basis: 100%;
+        margin-left: 0;
+        padding-top: 0.5rem;
+    }
+
+    #navMenu.nav-open {
         display: block;
+    }
+
+    #navMenu .navbar-nav {
+        align-items: flex-start;
+        padding-top: 0.25rem;
+        padding-bottom: 0.5rem;
+    }
+
+    #navMenu .nav-item {
+        width: 100%;
+    }
+
+    #navMenu .nav-link {
+        width: 100%;
+    }
+}
+
+/* Responsive Form */
+@media (max-width: 767.98px) {
+    .form-card {
+        max-width: 100%;
+    }
+
+    .form-tambah {
+        max-width: 100%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 575.98px) {
+    main.container {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+
+    .card-body {
+        padding: 1rem;
+    }
+
+    .form-buttons .btn {
+        width: 100%;
+    }
+
+    .navbar-brand {
+        font-size: 1.05rem;
+    }
+
+    #navMenu .nav-link {
+        font-size: 0.9rem;
     }
 }

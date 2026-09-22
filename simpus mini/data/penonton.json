@@ -1,0 +1,30 @@
+[
+    {
+        "no_penonton": "P001",
+        "nama": "Siti Aminah",
+        "alamat": "Malang",
+        "no_hp": "0812xxxx",
+        "email": "siti.aminah@email.com"
+    },
+    {
+        "no_penonton": "P002",
+        "nama": "Budi Santoso",
+        "alamat": "Batu",
+        "no_hp": "0813xxxx",
+        "email": "budi.santoso@email.com"
+    },
+    {
+        "no_penonton": "P003",
+        "nama": "Dewi Lestari",
+        "alamat": "Malang",
+        "no_hp": "0814xxxx",
+        "email": "dewi.lestari@email.com"
+    },
+    {
+        "no_penonton": "P004",
+        "nama": "Rizky Firmansyah",
+        "alamat": "Lawang",
+        "no_hp": "0815xxxx",
+        "email": "rizky.firmansyah@email.com"
+    }
+]
