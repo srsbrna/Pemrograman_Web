@@ -1,65 +1,70 @@
+<?php
+session_start();
+
+$error = $_SESSION['error'] ?? '';
+unset($_SESSION['error']);
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Tambah Film - SaCine</title>
 
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- CSS Custom -->
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
 <body>
 
-    <!-- Navbar -->
     <header class="navbar navbar-expand-md navbar-dark bg-primary">
         <div class="container">
 
-            <a class="navbar-brand fw-bold" href="../index.html">
+            <a class="navbar-brand fw-bold" href="../index.php">
                 SaCine
             </a>
 
-            <button class="navbar-toggler" type="button" id="nav-toggle-btn"
-                aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
-
+            <button
+                class="navbar-toggler"
+                type="button"
+                id="nav-toggle-btn"
+                aria-controls="navMenu"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-
             </button>
 
             <nav id="navMenu">
                 <ul class="navbar-nav ms-auto">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.html">
+                        <a class="nav-link" href="../index.php">
                             Beranda
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="list.html">
+                        <a class="nav-link" href="list.php">
                             Daftar Film
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="tambah.html">
+                        <a class="nav-link active" href="tambah.php">
                             Tambah Film
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="../penonton/list.html">
+                        <a class="nav-link" href="../penonton/list.php">
                             Daftar Penonton
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="../penonton/tambah.html">
+                        <a class="nav-link" href="../penonton/tambah.php">
                             Tambah Penonton
                         </a>
                     </li>
@@ -70,21 +75,35 @@
         </div>
     </header>
 
-
-    <!-- Main Content -->
     <main class="container my-4">
+
+        <?php if ($error): ?>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <?= htmlspecialchars($error) ?>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="alert">
+                </button>
+            </div>
+        <?php endif; ?>
 
         <div class="card shadow-sm form-card">
 
             <div class="card-body">
 
-                <h2 class="mb-4">
+                <h2 class="text-center mb-4">
                     Tambah Film
                 </h2>
 
-                <form id="form-tambah" class="form-tambah">
+                <form
+                    id="form-tambah"
+                    class="form-tambah"
+                    method="post"
+                    action="proses_tambah.php"
+                    novalidate>
 
-                    <!-- Judul Film -->
                     <div class="mb-3">
 
                         <label for="judul" class="form-label">
@@ -93,16 +112,13 @@
 
                         <input
                             type="text"
-                            class="form-control"
                             id="judul"
                             name="judul"
-                            placeholder="Masukkan judul film"
-                        >
+                            class="form-control"
+                            placeholder="Masukkan judul film">
 
                     </div>
 
-
-                    <!-- Sutradara -->
                     <div class="mb-3">
 
                         <label for="sutradara" class="form-label">
@@ -111,16 +127,13 @@
 
                         <input
                             type="text"
-                            class="form-control"
                             id="sutradara"
                             name="sutradara"
-                            placeholder="Masukkan nama sutradara"
-                        >
+                            class="form-control"
+                            placeholder="Masukkan nama sutradara">
 
                     </div>
 
-
-                    <!-- Genre -->
                     <div class="mb-3">
 
                         <label for="genre" class="form-label">
@@ -128,49 +141,42 @@
                         </label>
 
                         <select
-                            class="form-select"
                             id="genre"
                             name="genre"
-                        >
+                            class="form-select">
 
-                            <option value="" selected>
-                                Pilih genre
-                            </option>
-
-                            <option value="Drama">
-                                Drama
-                            </option>
-
-                            <option value="Romance">
-                                Romance
-                            </option>
-
-                            <option value="Comedy">
-                                Comedy
-                            </option>
-
-                            <option value="Horror">
-                                Horror
+                            <option value="">
+                                -- Pilih Genre --
                             </option>
 
                             <option value="Action">
                                 Action
                             </option>
 
-                            <option value="Thriller">
-                                Thriller
+                            <option value="Comedy">
+                                Comedy
                             </option>
 
-                            <option value="Fantasy">
-                                Fantasy
+                            <option value="Drama">
+                                Drama
+                            </option>
+
+                            <option value="Horror">
+                                Horror
+                            </option>
+
+                            <option value="Romance">
+                                Romance
+                            </option>
+
+                            <option value="Thriller">
+                                Thriller
                             </option>
 
                         </select>
 
                     </div>
 
-
-                    <!-- Tahun Rilis -->
                     <div class="mb-3">
 
                         <label for="tahun" class="form-label">
@@ -179,18 +185,15 @@
 
                         <input
                             type="number"
-                            class="form-control"
                             id="tahun"
                             name="tahun"
-                            placeholder="Masukkan tahun rilis"
+                            class="form-control"
                             min="1900"
                             max="2026"
-                        >
+                            placeholder="Contoh: 2024">
 
                     </div>
 
-
-                    <!-- Durasi -->
                     <div class="mb-3">
 
                         <label for="durasi" class="form-label">
@@ -199,17 +202,14 @@
 
                         <input
                             type="number"
-                            class="form-control"
                             id="durasi"
                             name="durasi"
-                            placeholder="Masukkan durasi film"
+                            class="form-control"
                             min="1"
-                        >
+                            placeholder="Contoh: 120">
 
                     </div>
 
-
-                    <!-- Salinan -->
                     <div class="mb-3">
 
                         <label for="salinan" class="form-label">
@@ -218,24 +218,25 @@
 
                         <input
                             type="number"
-                            class="form-control"
                             id="salinan"
                             name="salinan"
-                            placeholder="Masukkan jumlah salinan"
+                            class="form-control"
                             min="0"
-                        >
+                            placeholder="Contoh: 3">
 
                     </div>
 
-
-                    <!-- Tombol -->
                     <div class="form-buttons">
 
-                        <button type="submit" class="btn btn-primary">
+                        <button
+                            type="submit"
+                            class="btn btn-primary">
                             Simpan
                         </button>
 
-                        <a href="list.html" class="btn btn-secondary">
+                        <a
+                            href="list.php"
+                            class="btn btn-secondary">
                             Batal
                         </a>
 
@@ -249,8 +250,6 @@
 
     </main>
 
-
-    <!-- Footer -->
     <footer class="text-center py-3">
 
         <p class="mb-0">
@@ -259,11 +258,7 @@
 
     </footer>
 
-
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- JavaScript utama -->
     <script src="../assets/js/app.js"></script>
 
 </body>

@@ -44,7 +44,6 @@ header .container {
     color: #fff8e7 !important;
     font-size: 1.1rem;
     font-weight: 700;
-    letter-spacing: 0.2px;
 }
 
 .navbar-brand:hover {
@@ -113,10 +112,6 @@ main h2 {
 
 /* Beranda */
 main .card-title {
-    color: #315c43 !important;
-}
-
-main .card-title.text-primary {
     color: #315c43 !important;
 }
 
@@ -344,10 +339,7 @@ footer p {
 
 /* Responsive Form */
 @media (max-width: 767.98px) {
-    .form-card {
-        max-width: 100%;
-    }
-
+    .form-card,
     .form-tambah {
         max-width: 100%;
     }
