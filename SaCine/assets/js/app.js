@@ -13,27 +13,6 @@ function initNavToggle() {
     });
 }
 
-// Konfirmasi hapus
-function initHapusConfirm() {
-    document.addEventListener("click", function (e) {
-        const btn = e.target.closest(".btn-hapus");
-
-        if (!btn) return;
-
-        const row = btn.closest("tr");
-
-        const nama = row
-            ? row.querySelector("td")?.textContent.trim()
-            : "data ini";
-
-        const yakin = confirm('Yakin ingin menghapus "' + nama + '"?');
-
-        if (yakin && row) {
-            row.remove();
-        }
-    });
-}
-
 // Filter tabel
 function initTableFilter() {
     const input = document.getElementById("search-input");
@@ -217,7 +196,6 @@ function initValidasiForm() {
 
 document.addEventListener("DOMContentLoaded", function () {
     initNavToggle();
-    initHapusConfirm();
     initTableFilter();
     initValidasiForm();
 });
